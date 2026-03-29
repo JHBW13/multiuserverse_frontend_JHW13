@@ -48,16 +48,20 @@ const deleteUser = async (id) => {
       <td>
         
         <Link 
-                className="btn btn-primary mx-2"
-                to={`/viewuser/${user.id}`}>
-              View
-              </Link>
+        className="btn btn-primary mx-2"
+        to={`/viewuser/${user.id}`}>
+            <span className="btn-view-desktop">View</span>
+            <span className="btn-view-mobile"> <i className="fa-solid fa-eye"></i></span>
+        </Link>
         <Link className='btn btn-outline-primary mx-2' to={`/edit/${user.id}`}>
-          Edit
+          <span className="btn-edit-desktop">Edit</span>
+          <span className="btn-edit-mobile"> <i className="&#9998"></i></span>
+        </Link>
         </Link>
         <button className='btn btn-danger mx-2' 
         onClick={() => deleteUser(user.id)}>
-          Delete
+          <span className="btn-delete-desktop">Delete</span>
+          <span className="btn-delete-mobile"> <i className="&#10005"></i></span>
         </button>
       </td>
     </tr>
